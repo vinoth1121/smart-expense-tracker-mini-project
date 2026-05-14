@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================
+         META TAGS
+    ========================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Expense Tracker</title>
+
+    <!-- =========================
+         GOOGLE FONT
+    ========================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =========================
+         FONT AWESOME ICONS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- =========================
+         CSS FILE
+    ========================== -->
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- =========================
+         CHART JS
+    ========================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- =========================
+         BACKGROUND EFFECT
+    ========================== -->
+
+    <div class="background-animation"></div>
+
+    <!-- =========================
+         MAIN APP CONTAINER
+    ========================== -->
+
+    <div class="app-container">
+
+        <!-- =========================
+             SIDEBAR
+        ========================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo-section">
+
+                <h2>💰 ExpenseTracker</h2>
+
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <ul>
+
+                    <li class="active">
+
+                        <a href="#dashboard">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                            <span>Dashboard</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#transactions">
+
+                            <i class="fa-solid fa-wallet"></i>
+
+                            <span>Transactions</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#analytics">
+
+                            <i class="fa-solid fa-chart-pie"></i>
+
+                            <span>Analytics</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#assistant">
+
+                            <i class="fa-solid fa-robot"></i>
+
+                            <span>AI Assistant</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#reports">
+
+                            <i class="fa-solid fa-file-lines"></i>
+
+                            <span>Reports</span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+        <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+        <main class="main-content">
+
+            <!-- =========================
+                 TOPBAR
+            ========================== -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Smart Expense Tracker</h1>
+
+                    <p>
+                        Track and manage your expenses intelligently
+                    </p>
+
+                </div>
+
+                <div class="profile-box">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Welcome User</span>
+
+                </div>
+
+            </header>
+
+            <!-- =========================
+                 DASHBOARD CARDS
+            ========================== -->
+
+            <section
+                class="dashboard-cards"
+                id="dashboard"
+            >
+
+                <!-- Income Card -->
+
+                <div class="card income-card">
+
+                    <div>
+
+                        <h3>Total Income</h3>
+
+                        <h2 id="income">₹0</h2>
+
+                    </div>
+
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+
+                </div>
+
+                <!-- Expense Card -->
+
+                <div class="card expense-card">
+
+                    <div>
+
+                        <h3>Total Expense</h3>
+
+                        <h2 id="expense">₹0</h2>
+
+                    </div>
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+
+                </div>
+
+                <!-- Balance Card -->
+
+                <div class="card balance-card">
+
+                    <div>
+
+                        <h3>Balance</h3>
+
+                        <h2 id="balance">₹0</h2>
+
+                    </div>
+
+                    <i class="fa-solid fa-wallet"></i>
+
+                </div>
+
+            </section>
+
+            <!-- =========================
+                 ADD TRANSACTION SECTION
+            ========================== -->
+
+            <section class="transaction-form-section">
+
+                <div class="section-title">
+
+                    <h2>Add Transaction</h2>
+
+                </div>
+
+                <form
+                    id="transaction-form"
+                    class="transaction-form"
+                >
+
+                    <!-- Title -->
+
+                    <div class="input-group">
+
+                        <label for="title">
+                            Transaction Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="Enter transaction title"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Amount -->
+
+                    <div class="input-group">
+
+                        <label for="amount">
+                            Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="Enter amount"
+                            required
+                        >
+
+                    </div>
+
+                    <!-- Category -->
+
+                    <div class="input-group">
+
+                        <label for="category">
+                            Category
+                        </label>
+
+                        <select
+                            id="category"
+                            required
+                        >
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                            <option value="Food">
+                                Food
+                            </option>
+
+                            <option value="Travel">
+                                Travel
+                            </option>
+
+                            <option value="Shopping">
+                                Shopping
+                            </option>
+
+                            <option value="Bills">
+                                Bills
+                            </option>
+
+                            <option value="Entertainment">
+                                Entertainment
+                            </option>
+
+                            <option value="Others">
+                                Others
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Type -->
+
+                    <div class="input-group">
+
+                        <label for="type">
+                            Transaction Type
+                        </label>
+
+                        <select
+                            id="type"
+                            required
+                        >
+
+                            <option value="expense">
+                                Expense
+                            </option>
+
+                            <option value="income">
+                                Income
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Submit Button -->
+
+                    <button
+                        type="submit"
+                        class="add-btn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Transaction
+
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- =========================
+                 ANALYTICS SECTION
+            ========================== -->
+
+            <section
+                class="charts-section"
+                id="analytics"
+            >
+
+                <div class="chart-card">
+
+                    <h2>Expense Analytics</h2>
+
+                    <canvas id="expenseChart"></canvas>
+
+                </div>
+
+            </section>
+
+            <!-- =========================
+                 TRANSACTIONS SECTION
+            ========================== -->
+
+            <section
+                class="transactions-section"
+                id="transactions"
+            >
+
+                <div class="section-title">
+
+                    <h2>Recent Transactions</h2>
+
+                </div>
+
+                <div
+                    id="transaction-list"
+                    class="transaction-list"
+                >
+
+                    <!-- Dynamic Transactions Here -->
+
+                    <div class="empty-state">
+
+                        <i class="fa-solid fa-receipt"></i>
+
+                        <p>
+                            No transactions added yet
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- =========================
+                 AI ASSISTANT SECTION
+            ========================== -->
+
+            <section
+                class="assistant-section"
+                id="assistant"
+            >
+
+                <div class="assistant-card">
+
+                    <h2>
+
+                        <i class="fa-solid fa-robot"></i>
+
+                        Smart Assistant
+
+                    </h2>
+
+                    <div
+                        class="assistant-message"
+                        id="assistant-message"
+                    >
+
+                        Start adding transactions to receive smart financial suggestions.
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- =========================
+                 REPORT SECTION
+            ========================== -->
+
+            <section
+                class="reports-section"
+                id="reports"
+            >
+
+                <div class="report-card">
+
+                    <h2>Download Expense Report</h2>
+
+                    <button
+                        id="download-report"
+                        class="download-btn"
+                    >
+
+                        <i class="fa-solid fa-download"></i>
+
+                        Download Report
+
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- =========================
+         JAVASCRIPT FILE
+    ========================== -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
