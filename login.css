@@ -1,0 +1,322 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+
+    --primary-color: #4f46e5;
+
+    --secondary-color: #06b6d4;
+
+    --bg-color: #0f172a;
+
+    --card-bg: rgba(255,255,255,0.08);
+
+    --border-color: rgba(255,255,255,0.1);
+
+    --text-primary: #ffffff;
+
+    --text-secondary: #cbd5e1;
+
+    --shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+    --radius: 18px;
+
+    --transition: 0.3s ease;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    color: white;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background-animation {
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(79,70,229,0.2), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(6,182,212,0.15), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(16,185,129,0.15), transparent 25%);
+
+    z-index: -1;
+}
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: rgba(255,255,255,0.06);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.login-left {
+
+    padding: 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(79,70,229,0.4),
+        rgba(6,182,212,0.3)
+    );
+}
+
+.login-left h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 20px;
+}
+
+.login-left p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: var(--text-secondary);
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.login-right {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 400px;
+}
+
+.login-card h2 {
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.login-card p {
+
+    color: var(--text-secondary);
+
+    margin-bottom: 30px;
+}
+
+/* =========================
+   INPUT GROUP
+========================= */
+
+.input-group {
+
+    margin-bottom: 22px;
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--text-secondary);
+}
+
+.input-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    padding: 14px;
+}
+
+.input-box i {
+
+    color: var(--secondary-color);
+}
+
+.input-box input {
+
+    flex: 1;
+
+    background: transparent;
+
+    border: none;
+
+    outline: none;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+.input-box input::placeholder {
+
+    color: #94a3b8;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.login-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.login-btn:hover {
+
+    transform: scale(1.02);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .login-container {
+
+        grid-template-columns: 1fr;
+    }
+
+    .login-left {
+
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .login-right {
+
+        padding: 25px;
+    }
+
+    .login-card h2 {
+
+        font-size: 28px;
+    }
+}

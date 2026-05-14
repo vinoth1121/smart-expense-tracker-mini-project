@@ -1,0 +1,638 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+
+    --primary-color: #4f46e5;
+    --secondary-color: #06b6d4;
+
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+
+    --bg-color: #0f172a;
+
+    --card-bg: rgba(255,255,255,0.08);
+
+    --border-color: rgba(255,255,255,0.1);
+
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+
+    --shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+    --radius: 18px;
+
+    --transition: 0.3s ease;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+
+    color: var(--text-primary);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND EFFECT
+========================= */
+
+.background-animation {
+
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(79,70,229,0.2), transparent 25%),
+        radial-gradient(circle at 80% 30%, rgba(6,182,212,0.15), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(16,185,129,0.15), transparent 25%);
+
+    z-index: -1;
+}
+
+/* =========================
+   APP LAYOUT
+========================= */
+
+.app-container {
+
+    display: flex;
+
+    min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+
+    width: 260px;
+
+    background: rgba(15, 23, 42, 0.85);
+
+    backdrop-filter: blur(15px);
+
+    border-right: 1px solid var(--border-color);
+
+    padding: 25px 20px;
+
+    position: sticky;
+
+    top: 0;
+
+    height: 100vh;
+}
+
+.logo-section {
+
+    margin-bottom: 40px;
+}
+
+.logo-section h2 {
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+.sidebar-menu ul {
+
+    list-style: none;
+}
+
+.sidebar-menu li {
+
+    margin-bottom: 15px;
+}
+
+.sidebar-menu a {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    color: var(--text-secondary);
+
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    transition: var(--transition);
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active a {
+
+    background: rgba(79,70,229,0.25);
+
+    color: white;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+
+    flex: 1;
+
+    padding: 30px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.topbar h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 5px;
+}
+
+.topbar p {
+
+    color: var(--text-secondary);
+}
+
+.profile-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: var(--card-bg);
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    border: 1px solid var(--border-color);
+}
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.dashboard-cards {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.card {
+
+    background: var(--card-bg);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    padding: 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+}
+
+.card h3 {
+
+    font-size: 15px;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 10px;
+}
+
+.card h2 {
+
+    font-size: 30px;
+}
+
+.card i {
+
+    font-size: 34px;
+}
+
+.income-card i {
+
+    color: var(--success-color);
+}
+
+.expense-card i {
+
+    color: var(--danger-color);
+}
+
+.balance-card i {
+
+    color: var(--warning-color);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.transaction-form-section,
+.chart-card,
+.transactions-section,
+.assistant-card,
+.report-card {
+
+    background: var(--card-bg);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    padding: 25px;
+
+    margin-bottom: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+.section-title {
+
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+
+    font-size: 24px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.transaction-form {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+}
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.input-group label {
+
+    margin-bottom: 8px;
+
+    color: var(--text-secondary);
+}
+
+.input-group input,
+.input-group select {
+
+    padding: 14px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    outline: none;
+}
+
+.input-group input::placeholder {
+
+    color: #94a3b8;
+}
+
+.input-group select option {
+
+    background: #1e293b;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.add-btn,
+.download-btn {
+
+    padding: 14px 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.add-btn:hover,
+.download-btn:hover {
+
+    transform: scale(1.02);
+}
+
+.delete-btn {
+
+    background: var(--danger-color);
+
+    border: none;
+
+    color: white;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.delete-btn:hover {
+
+    opacity: 0.8;
+}
+
+/* =========================
+   TRANSACTION LIST
+========================= */
+
+.transaction-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.transaction-item {
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.transaction-item h4 {
+
+    margin-bottom: 5px;
+}
+
+.transaction-item p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+}
+
+.transaction-amount {
+
+    font-size: 20px;
+
+    font-weight: 600;
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+
+    text-align: center;
+
+    padding: 40px 20px;
+
+    color: var(--text-secondary);
+}
+
+.empty-state i {
+
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   ASSISTANT
+========================= */
+
+.assistant-message {
+
+    margin-top: 15px;
+
+    background: rgba(79,70,229,0.15);
+
+    border-left: 4px solid var(--primary-color);
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    color: var(--text-secondary);
+
+    line-height: 1.6;
+}
+
+/* =========================
+   CHART
+========================= */
+
+canvas {
+
+    margin-top: 20px;
+
+    max-height: 400px;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--primary-color);
+
+    border-radius: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+    .sidebar {
+
+        width: 90px;
+    }
+
+    .sidebar h2,
+    .sidebar a span {
+
+        display: none;
+    }
+
+    .sidebar-menu a {
+
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .app-container {
+
+        flex-direction: column;
+    }
+
+    .sidebar {
+
+        width: 100%;
+
+        height: auto;
+
+        position: relative;
+    }
+
+    .sidebar-menu ul {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .main-content {
+
+        padding: 20px;
+    }
+
+    .topbar {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+    .dashboard-cards {
+
+        grid-template-columns: 1fr;
+    }
+
+    .transaction-form {
+
+        grid-template-columns: 1fr;
+    }
+}
